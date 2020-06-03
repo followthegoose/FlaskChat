@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flask.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+    <script type="text/javascript" charset="ytf-8">
+        $(document).ready(function () {
+            namespace = '/flask;
+            var sio = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+            $(
+        })
+    </script>
+    <meta charset="UTF-8">
+    <title>Remote</title>
+</head>
+<body>
+    {% for k,v in colors.items() %}
+    <input id="{{ k }}" class="sync" type="range" min="0", max="255" value="{{ v }}">
+    {% if not loop.last %}
+        <br><br>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>
